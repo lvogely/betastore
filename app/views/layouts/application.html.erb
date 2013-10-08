@@ -6,78 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-<style>
-
-*, html {
-	font-size: 12px;
-	padding: 0;
-	margin: 0;
-}
-
-.container {
-	width: 100%;
-	text-align: center;
-}
-
-.content,
-.content p {
-	margin: 0 auto; 
-	max-width: 1080px;
-	padding: 10px 0 30px 0;
-	font-family: 'OpenSansSemiBold', sans-serif;
-	text-align: left;
-}
-
-.content p,
-.content p a:link,
-.content p a:active,
-.content p a:visited {
-	text-decoration: none;
-	color: #777;
-	font-size: 1.25rem;
-	position: relative;
-	text-align: center;
-	letter-spacing: -.5px;
-	text-transform: uppercase;
-}
-
-img {
-	width: 80%;
-	height: 80%;
-	padding: 15px;
-}
-
-.columns {
-	clear: both;
-	margin: 15px;
-}
-
-.third {
-	max-width: 29.6875%;
-	margin: 0 5.46875% 25px 0;
-	float: left;
-	text-align: center;
-}
-
-.last {
-	margin-right: 0;
-}
-
-.hr {
-	clear: both;
-	width: 100%;
-	padding-top: 30px;
-	margin-bottom: 50px;
-	border-bottom: 1px solid #ccc;
-}
-
-h1 {
-	font-size: 2rem;
-	padding: 10px 0;
-}
-
-</style>
+  <link href='/app/assets/stylesheets/application.css' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
@@ -86,74 +15,30 @@ h1 {
 
 <div class="content">
 
-	<div style="margin: 0 auto; text-align: center;">
-	    <%= image_tag "http://baltimoreinnovationweek.com/wp-content/uploads/2013/07/betamore-logo1.jpg", width: 600 %>
-		<%= yield %>
-	</div>
-
-	<div class="hr"></div>
-
-<div class="columns">
-
-	<div class="third">
-
-		<img src="http://pjb3.github.io/betastore/products/hat.jpg" />
-
-		<p class="text-align-center"><a href="#">Hat</a></p>
-
-	</div>
-
-	<div class="third">
-
-		<img src="http://pjb3.github.io/betastore/products/hoodie.jpg"/>
-
-		<p><a href="#">Hoodie</a></p>
-	</div>
-
-	<div class="third last">
-
-		<img src="http://pjb3.github.io/betastore/products/iphone_case.jpg"/>
-
-		<p><a href="#">iPhone Case</a></p>
-
-	</div>
-
+<div class="primary-button" id="top-login">
+	<% if cookies[:email].present? %>
+	<%= link_to "Logout", log_out_path, method: 'post' %>
+	<% else %>
+	<%= link_to "Login", log_in_path, method: 'post' %>
+	<% end %>
 </div>
 
-	<div class="hr"></div>
+ <div class="header">
 
-<div class="columns">
+      <div id="logo"><%= image_tag "http://baltimoreinnovationweek.com/wp-content/uploads/2013/07/betamore-logo1.jpg" %></div>
 
-	<div class="third">
+<div class="hr"></div>
 
-		<img src="http://pjb3.github.io/betastore/products/journal.jpg"/>
-
-		<p><a href="#">Journal</a></p>
-
-	</div>
-
-	<div class="third">
-
-		<img src="http://pjb3.github.io/betastore/products/shirt.jpg"/>
-
-		<p><a href="#">Shirt</a></p>
-
-	</div>
-
-	<div class="third last">
-
-		<img src="http://pjb3.github.io/betastore/products/sticker.jpg"/>
-
-		<p><a href="#">Sticker</a></p>
-
-	</div>
-
-</div>
-
-	<div class="hr"></div>
+    <%= yield %>
+  </div>
 
 
 </div> <!--End Content -->
+
+<div id="footer">
+<p>copyright &copy; Betamore 2013. All rights reserved</p>
+
+</div>
 
 </div> <!--End Container -->
 
