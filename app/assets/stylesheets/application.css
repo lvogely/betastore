@@ -132,7 +132,7 @@ h1 {
 	background: #ecebe9 url('http://betamore.com/wp-content/themes/betamore/img/mail_border.png') repeat-x top;
 }
 
-.form label, .form label p {
+.form label, .form label p, .form p {
 	font-size: 1.5rem;
 	text-transform: uppercase;
 	margin: 0;

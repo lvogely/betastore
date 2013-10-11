@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131004000304) do
+ActiveRecord::Schema.define(version: 20131011002108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20131004000304) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
   create_table "line_items", force: true do |t|
@@ -50,11 +51,22 @@ ActiveRecord::Schema.define(version: 20131004000304) do
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
 
+  create_table "password_resets", force: true do |t|
+    t.integer  "customer_id"
+    t.string   "token"
+    t.datetime "used_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "password_resets", ["customer_id"], name: "index_password_resets_on_customer_id", using: :btree
+
   create_table "products", force: true do |t|
     t.string   "name"
     t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url"
   end
 
   create_table "subscriptions", force: true do |t|

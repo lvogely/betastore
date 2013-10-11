@@ -34,9 +34,13 @@ end
 
 group :development do
   gem 'hirb'
+  gem 'quiet_assets'
+  gem 'pry'
 end
 
 gem 'rails_12factor', group: :production
+
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -13,6 +13,7 @@ skip_before_filter :require_log_in
   # GET /products/1
   # GET /products/1.json
   def show
+
   end
 
   # GET /products/new
@@ -72,6 +73,6 @@ skip_before_filter :require_log_in
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params[:product]
+      params[:product, :name, :price, :url]
     end
 end

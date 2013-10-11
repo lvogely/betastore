@@ -5,9 +5,13 @@ Betastore::Application.routes.draw do
 
   resources :subscriptions
 
-  get '/log_in'  => 'logins#new', as: 'log_in'
+  get '/log_in'  => 'logins#index', as: 'log_in'
+  get '/log_in'  => 'logins#new'
   post '/log_in'  => 'logins#create'
   post '/log_out' => 'logins#destroy', as: 'log_out'
+
+  get '/sign_up' => 'customers#new', as: 'sign_up'
+  post '/sign_up' => 'customers#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
