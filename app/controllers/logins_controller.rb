@@ -5,7 +5,7 @@ class LoginsController < ApplicationController
   def create
     customer = Customer.find_by(email: params[:email])
     if customer && customer.authenticate(params[:password])
-      cookies[:customer_id] = customer.id
+      cookies.signed[:customer_id] = customer.id
       redirect_to products_path
     else
       redirect_to log_in_path, alert: 'Log In Failed'
@@ -13,12 +13,8 @@ class LoginsController < ApplicationController
   end
 
   def destroy
-    cookies.delete(:customer_id)
+    cookies.delete(:email)
     redirect_to products_path
-  end
-
-  def index
-    @logins = Login.all
   end
 
   # GET /logins/1
@@ -37,10 +33,7 @@ class LoginsController < ApplicationController
 
   # POST /logins
   # POST /logins.json
-  def create
-  @login = Login.new(login_params)
 
-end
  # respond_to do |format|
  #  if @login.save
  #      format.html { redirect_to @login, notice: 'Login was successfully created.' }

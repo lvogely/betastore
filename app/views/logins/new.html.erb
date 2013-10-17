@@ -1,25 +1,9 @@
-<h1>New login</h1>
-
+<h1>Login</h1>
 
 <div class="form">
-<form method="POST" action="/log_in">
-  <label>
-    <p>Email</p>
-    <input type="email" name="email" />
-  </label>
-
-  <label>
-    <p>Password</p>
-    <input type="password" name="password" />
-  </label>
-
-  <button type="submit" class="primary-button">Log In</button>
-</form>
-
-<% if flash[:alert] %>
-  <p style="color: red"><%= flash[:alert] %></p>
-<% end %>
-
+  <%= render 'form' %>
 </div>
 
-<br/>
+<br>
+
+<p>Already have an account? <%= link_to "Sign Up", sign_up_path %></p>

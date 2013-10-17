@@ -16,7 +16,7 @@
 <div class="content">
 
 <div class="primary-button" id="top-login">
-	<% if cookies[:email].present? %>
+	<% if cookies.signed[:customer_id].present? %>
 	<%= link_to "Logout", log_out_path, method: 'post' %>
 	<% else %>
 	<%= link_to "Login", log_in_path, method: 'post' %>
@@ -25,7 +25,7 @@
 
  <div class="header">
 
-      <div id="logo"><%= image_tag "http://baltimoreinnovationweek.com/wp-content/uploads/2013/07/betamore-logo1.jpg" %></div>
+      <div id="logo"><a href="/products/"><%= image_tag "http://baltimoreinnovationweek.com/wp-content/uploads/2013/07/betamore-logo1.jpg" %></a></div>
 
 <div class="hr"></div>
 

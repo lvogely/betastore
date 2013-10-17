@@ -1,12 +1,16 @@
 Betastore::Application.routes.draw do
-  
+
+  namespace :admin do
+    resources :products
+    root :to => 'products#index'
+  end
+
   resources :products
   root :to => 'products#index'
 
   resources :subscriptions
 
-  get '/log_in'  => 'logins#index', as: 'log_in'
-  get '/log_in'  => 'logins#new'
+  get '/log_in'  => 'logins#new', as: 'log_in'
   post '/log_in'  => 'logins#create'
   post '/log_out' => 'logins#destroy', as: 'log_out'
 

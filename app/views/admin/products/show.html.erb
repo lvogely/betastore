@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div class="single-product">
+	<img src="<%= @product.url %>" />
+	
+	<div class="details">
+		<h1><%= @product.name %></h1>
+		<p><strong>Price: </strong> <%= number_to_currency(@product.price) %></p>
+		<p>Created:</strong> <%= time_ago_in_words @product.created_at %></p>
+	</div>
+
+</div>
+
+<hr />
+
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @products.each do |product| %>
+      <tr>
+        <td><% print(product.name) %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table> -->
+
+<%= link_to 'Edit', edit_admin_product_path(@admin_product) %> |
+<%= link_to 'Back', admin_products_path %>

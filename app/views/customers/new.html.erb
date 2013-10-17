@@ -2,41 +2,17 @@
 
 
 <div class="form">
-<form method="POST" action="/log_in">
-  <label>
-    <p>Email</p>
-    <input type="email" name="email" />
-  </label>
-
-  <label>
-    <p>Password</p>
-    <input type="password" name="password" />
-  </label>
-
-  <button type="submit" class="primary-button">Log In</button>
-</form>
-
-<% if flash[:alert] %>
-  <p style="color: red"><%= flash[:alert] %></p>
-<% end %>
-
+<%= render 'form' %>
 </div>
 
-<br/>
+<% if @customer.errors.present? %>
+  <ul>
+  <% @customer.errors.full_messages.each do |e| %>
+  <li><%= e %></li>
+  <%end%>
+  
+  </ul>
 
-<div class="form">
-<%= form_for @customer, url: sign_up_path do |f| %>
+  <%end%>
 
-    <p><%= f.label :name %></p>
-    <%= f.text_field :name %>
-
-    <p><%= f.label :email %></p>
-    <%= f.email_field :email %>
-
-    <p><%= f.label :password %></p>
-    <%= f.password_field :password %> 
-
-
-  <%= f.submit 'Sign Up', class: 'primary-button' %>
-<% end %>
-</div>
+  <p>Already have an account? <%= link_to "Log In", log_in_path %></p>
