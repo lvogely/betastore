@@ -10,6 +10,9 @@ Betastore::Application.routes.draw do
 
   resources :subscriptions
 
+  get '/forgot_password' => 'password_resets#new', as: 'forgot_password'
+  post '/forgot_password' => 'password_resets#create'
+
   get '/log_in'  => 'logins#new', as: 'log_in'
   post '/log_in'  => 'logins#create'
   post '/log_out' => 'logins#destroy', as: 'log_out'

@@ -8,6 +8,14 @@ skip_before_filter :require_log_in
   def index
     @products = Product.all
     logger.debug "PARAMS: #{params.inspect}"
+    
+    respond_to do |format|
+        format.html
+        format.rss
+        format.json do
+          render json: @products
+        end
+       end
   end
 
   # GET /products/1
@@ -73,6 +81,6 @@ skip_before_filter :require_log_in
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params[:product, :name, :price, :url]
+      params.require(:product).permit(:name, :price, :url)
     end
 end
