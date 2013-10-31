@@ -1,6 +1,10 @@
 <h1>Product Listing</h1>
 
-<a><%= link_to 'Add New Product', new_product_path %></a>
+<a><%= link_to 'Add New Product', new_product_path %></a><br/>
+
+<%= link_to "#" do %>
+ Cart (<span id="cart_item_count"><%= cart_item_count %></span>)
+<% end %>
 
 <div class="columns">
 
@@ -11,6 +15,7 @@
         <div><%= link_to product.name, product_path(product) %></div>
         <div>Created <%= time_ago_in_words product.created_at %></div>
         <div><%= number_to_currency(product.price) %></div>
+        <div style="text-align: center;"><%= button_to "Add to cart", add_to_cart_path(product), class: 'add-to-cart-button' %></div>
       </div>
     <% end %>
 

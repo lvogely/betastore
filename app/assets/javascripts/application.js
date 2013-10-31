@@ -14,3 +14,23 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+   $('.add-to-cart-button').click(function(){
+     try {
+       var action = $(this).parents('form').attr('action');
+       $.ajax({
+         type: "POST",
+         url: action,
+         dataType: 'json',
+         success: function(json) {
+           $('#cart_item_count').text(json.item_count);
+         }
+       });
+     } catch(e) {
+       console.log(e);
+     } finally {
+       return false;
+     }
+   });
+});

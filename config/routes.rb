@@ -20,6 +20,7 @@ Betastore::Application.routes.draw do
   get '/sign_up' => 'customers#new', as: 'sign_up'
   post '/sign_up' => 'customers#create'
 
+  post '/products/:product_id/cart_items' => 'cart_items#create', as: 'add_to_cart'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

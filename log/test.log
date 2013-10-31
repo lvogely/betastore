@@ -2977,3 +2977,261 @@ Processing by PasswordResetsController#create as HTML
 Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.4ms)
   [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "password_resets"
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.3ms)[0m  ALTER TABLE "admin_products" DISABLE TRIGGER ALL;ALTER TABLE "customers" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "logins" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "password_resets" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "subscriptions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "admin_products"
+  [1m[36mFixture Insert (1.1ms)[0m  [1mINSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:47:05', '2013-10-30 22:47:05', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:47:05', '2013-10-30 22:47:05', 298486374)
+  [1m[36mFixture Delete (0.9ms)[0m  [1mDELETE FROM "customers"[0m
+  [1m[35mFixture Insert (1.8ms)[0m  INSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'test@example.com', '2013-10-30 22:47:05', '2013-10-30 22:47:05', 411008527)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2013-10-30 22:47:05', '2013-10-30 22:47:05', 298486374)[0m
+  [1m[35mFixture Delete (1.1ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (1.9ms)[0m  [1mINSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 22:47:05', '2013-10-30 22:47:05', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 22:47:05', '2013-10-30 22:47:05', 298486374)
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "logins"[0m
+  [1m[35mFixture Insert (0.8ms)[0m  INSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:47:05', '2013-10-30 22:47:05', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:47:05', '2013-10-30 22:47:05', 298486374)[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "orders"
+  [1m[36mFixture Insert (1.3ms)[0m  [1mINSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 22:47:05', '2013-10-30 22:47:05', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 22:47:05', '2013-10-30 22:47:05', 298486374)
+  [1m[36mFixture Delete (0.9ms)[0m  [1mDELETE FROM "password_resets"[0m
+  [1m[35mFixture Insert (1.4ms)[0m  INSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 22:47:05', '2013-10-30 22:47:05', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 22:47:05', '2013-10-30 22:47:05', 298486374)[0m
+  [1m[35mFixture Delete (0.9ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.8ms)[0m  [1mINSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:47:05', '2013-10-30 22:47:05', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:47:05', '2013-10-30 22:47:05', 298486374)
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "subscriptions"[0m
+  [1m[35mFixture Insert (0.9ms)[0m  INSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 22:47:05', '2013-10-30 22:47:05', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 22:47:05', '2013-10-30 22:47:05', 298486374)[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "admin_products" ENABLE TRIGGER ALL;ALTER TABLE "customers" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "logins" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "password_resets" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "subscriptions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------------
+CartItemsControllerTest: test_create_adds_item_to_session
+---------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "admin_products" DISABLE TRIGGER ALL;ALTER TABLE "customers" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "logins" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "password_resets" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "subscriptions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "admin_products"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:49:46', '2013-10-30 22:49:46', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:49:46', '2013-10-30 22:49:46', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "customers"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'test@example.com', '2013-10-30 22:49:46', '2013-10-30 22:49:46', 411008527)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2013-10-30 22:49:46', '2013-10-30 22:49:46', 298486374)[0m
+  [1m[35mFixture Delete (0.7ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 22:49:46', '2013-10-30 22:49:46', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 22:49:46', '2013-10-30 22:49:46', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "logins"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:49:46', '2013-10-30 22:49:46', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:49:46', '2013-10-30 22:49:46', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "orders"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 22:49:46', '2013-10-30 22:49:46', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 22:49:46', '2013-10-30 22:49:46', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "password_resets"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 22:49:46', '2013-10-30 22:49:46', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 22:49:46', '2013-10-30 22:49:46', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:49:46', '2013-10-30 22:49:46', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:49:46', '2013-10-30 22:49:46', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "subscriptions"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 22:49:46', '2013-10-30 22:49:46', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 22:49:46', '2013-10-30 22:49:46', 298486374)[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "admin_products" ENABLE TRIGGER ALL;ALTER TABLE "customers" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "logins" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "password_resets" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "subscriptions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------------
+CartItemsControllerTest: test_create_adds_item_to_session
+---------------------------------------------------------
+Processing by CartItemsController#create as HTML
+  Parameters: {"product_id"=>"99"}
+Redirected to http://test.host/products
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "admin_products" DISABLE TRIGGER ALL;ALTER TABLE "customers" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "logins" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "password_resets" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "subscriptions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "admin_products"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:12', '2013-10-30 22:50:12', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:12', '2013-10-30 22:50:12', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "customers"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'test@example.com', '2013-10-30 22:50:12', '2013-10-30 22:50:12', 411008527)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2013-10-30 22:50:12', '2013-10-30 22:50:12', 298486374)[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 22:50:12', '2013-10-30 22:50:12', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 22:50:12', '2013-10-30 22:50:12', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "logins"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:12', '2013-10-30 22:50:12', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:12', '2013-10-30 22:50:12', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "orders"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 22:50:12', '2013-10-30 22:50:12', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 22:50:12', '2013-10-30 22:50:12', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "password_resets"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 22:50:12', '2013-10-30 22:50:12', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 22:50:12', '2013-10-30 22:50:12', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:12', '2013-10-30 22:50:12', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:12', '2013-10-30 22:50:12', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "subscriptions"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 22:50:12', '2013-10-30 22:50:12', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 22:50:12', '2013-10-30 22:50:12', 298486374)[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "admin_products" ENABLE TRIGGER ALL;ALTER TABLE "customers" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "logins" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "password_resets" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "subscriptions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------------
+CartItemsControllerTest: test_create_adds_item_to_session
+---------------------------------------------------------
+Processing by CartItemsController#create as HTML
+  Parameters: {"product_id"=>"99"}
+Redirected to http://test.host/products
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "admin_products" DISABLE TRIGGER ALL;ALTER TABLE "customers" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "logins" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "password_resets" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "subscriptions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "admin_products"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:41', '2013-10-30 22:50:41', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:41', '2013-10-30 22:50:41', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "customers"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'test@example.com', '2013-10-30 22:50:41', '2013-10-30 22:50:41', 411008527)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2013-10-30 22:50:41', '2013-10-30 22:50:41', 298486374)[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 22:50:41', '2013-10-30 22:50:41', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 22:50:41', '2013-10-30 22:50:41', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "logins"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:41', '2013-10-30 22:50:41', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:41', '2013-10-30 22:50:41', 298486374)[0m
+  [1m[35mFixture Delete (0.7ms)[0m  DELETE FROM "orders"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 22:50:41', '2013-10-30 22:50:41', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 22:50:41', '2013-10-30 22:50:41', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "password_resets"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 22:50:41', '2013-10-30 22:50:41', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 22:50:41', '2013-10-30 22:50:41', 298486374)[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:41', '2013-10-30 22:50:41', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 22:50:41', '2013-10-30 22:50:41', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "subscriptions"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 22:50:41', '2013-10-30 22:50:41', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 22:50:41', '2013-10-30 22:50:41', 298486374)[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "admin_products" ENABLE TRIGGER ALL;ALTER TABLE "customers" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "logins" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "password_resets" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "subscriptions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------------
+CartItemsControllerTest: test_create_adds_item_to_session
+---------------------------------------------------------
+Processing by CartItemsController#create as HTML
+  Parameters: {"product_id"=>"99"}
+Redirected to http://test.host/products
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.9ms)[0m  ALTER TABLE "admin_products" DISABLE TRIGGER ALL;ALTER TABLE "customers" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "logins" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "password_resets" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "subscriptions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "admin_products"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:20', '2013-10-30 23:07:20', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:20', '2013-10-30 23:07:20', 298486374)
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "customers"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'test@example.com', '2013-10-30 23:07:20', '2013-10-30 23:07:20', 411008527)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2013-10-30 23:07:20', '2013-10-30 23:07:20', 298486374)[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 23:07:20', '2013-10-30 23:07:20', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 23:07:20', '2013-10-30 23:07:20', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "logins"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:20', '2013-10-30 23:07:20', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:20', '2013-10-30 23:07:20', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "orders"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 23:07:20', '2013-10-30 23:07:20', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 23:07:20', '2013-10-30 23:07:20', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "password_resets"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 23:07:20', '2013-10-30 23:07:20', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 23:07:20', '2013-10-30 23:07:20', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:20', '2013-10-30 23:07:20', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:20', '2013-10-30 23:07:20', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "subscriptions"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 23:07:20', '2013-10-30 23:07:20', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 23:07:20', '2013-10-30 23:07:20', 298486374)[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "admin_products" ENABLE TRIGGER ALL;ALTER TABLE "customers" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "logins" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "password_resets" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "subscriptions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------------
+CartItemsControllerTest: test_create_adds_item_to_session
+---------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "admin_products" DISABLE TRIGGER ALL;ALTER TABLE "customers" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "logins" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "password_resets" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "subscriptions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "admin_products"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:46', '2013-10-30 23:07:46', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:46', '2013-10-30 23:07:46', 298486374)
+  [1m[36mFixture Delete (1.4ms)[0m  [1mDELETE FROM "customers"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'test@example.com', '2013-10-30 23:07:46', '2013-10-30 23:07:46', 411008527)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2013-10-30 23:07:46', '2013-10-30 23:07:46', 298486374)[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 23:07:46', '2013-10-30 23:07:46', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 23:07:46', '2013-10-30 23:07:46', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "logins"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:46', '2013-10-30 23:07:46', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:46', '2013-10-30 23:07:46', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "orders"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 23:07:46', '2013-10-30 23:07:46', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 23:07:46', '2013-10-30 23:07:46', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "password_resets"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 23:07:46', '2013-10-30 23:07:46', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 23:07:46', '2013-10-30 23:07:46', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:46', '2013-10-30 23:07:46', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:07:46', '2013-10-30 23:07:46', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "subscriptions"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 23:07:46', '2013-10-30 23:07:46', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 23:07:46', '2013-10-30 23:07:46', 298486374)[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "admin_products" ENABLE TRIGGER ALL;ALTER TABLE "customers" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "logins" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "password_resets" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "subscriptions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------------
+CartItemsControllerTest: test_create_adds_item_to_session
+---------------------------------------------------------
+Processing by CartItemsController#create as HTML
+  Parameters: {"product_id"=>"99"}
+Redirected to http://test.host/products
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "admin_products" DISABLE TRIGGER ALL;ALTER TABLE "customers" DISABLE TRIGGER ALL;ALTER TABLE "line_items" DISABLE TRIGGER ALL;ALTER TABLE "logins" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "password_resets" DISABLE TRIGGER ALL;ALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "subscriptions" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "admin_products"
+  [1m[36mFixture Insert (0.8ms)[0m  [1mINSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:13:10', '2013-10-30 23:13:10', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "admin_products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:13:10', '2013-10-30 23:13:10', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "customers"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'test@example.com', '2013-10-30 23:13:10', '2013-10-30 23:13:10', 411008527)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2013-10-30 23:13:10', '2013-10-30 23:13:10', 298486374)[0m
+  [1m[35mFixture Delete (0.9ms)[0m  DELETE FROM "line_items"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 23:13:10', '2013-10-30 23:13:10', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "line_items" ("order_id", "product_id", "quantity", "price", "created_at", "updated_at", "id") VALUES (NULL, NULL, 1, 9.99, '2013-10-30 23:13:10', '2013-10-30 23:13:10', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "logins"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:13:10', '2013-10-30 23:13:10', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "logins" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:13:10', '2013-10-30 23:13:10', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "orders"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 23:13:10', '2013-10-30 23:13:10', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "orders" ("customer_id", "placed_at", "total_amount", "created_at", "updated_at", "id") VALUES (NULL, '2013-10-01 18:31:57.000000', 9.99, '2013-10-30 23:13:10', '2013-10-30 23:13:10', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "password_resets"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 23:13:10', '2013-10-30 23:13:10', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "password_resets" ("customer_id", "token", "used_at", "created_at", "updated_at", "id") VALUES (NULL, 'MyString', '2013-10-10 20:21:08.000000', '2013-10-30 23:13:10', '2013-10-30 23:13:10', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:13:10', '2013-10-30 23:13:10', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "products" ("created_at", "updated_at", "id") VALUES ('2013-10-30 23:13:10', '2013-10-30 23:13:10', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "subscriptions"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 23:13:10', '2013-10-30 23:13:10', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("email", "created_at", "updated_at", "id") VALUES ('MyString', '2013-10-30 23:13:10', '2013-10-30 23:13:10', 298486374)[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "admin_products" ENABLE TRIGGER ALL;ALTER TABLE "customers" ENABLE TRIGGER ALL;ALTER TABLE "line_items" ENABLE TRIGGER ALL;ALTER TABLE "logins" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "password_resets" ENABLE TRIGGER ALL;ALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "subscriptions" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------------
+CartItemsControllerTest: test_create_adds_item_to_session
+---------------------------------------------------------
+Processing by CartItemsController#create as HTML
+  Parameters: {"product_id"=>"99"}
+Redirected to http://test.host/products
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
